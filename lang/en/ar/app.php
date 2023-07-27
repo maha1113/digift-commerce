@@ -1,0 +1,32 @@
+<?php
+return[
+
+'dashboard' => 'لوحة التحكم',
+'pages' => 'الصفحات',
+'apps' => 'التطبيقات',
+'layouts' => 'التصامبم',
+'help' => 'مساعدة',
+'user profile' => 'الملف الشخصي ',
+'product' => 'المنتجات',
+'create product' => 'انشاء منتج',
+'all products' => 'جميع المنتجات',
+'default' => 'الافتراضي',
+'projects' => 'المشاريع',
+'marketing' => 'تسويق',
+'pos system' => 'نقاط البيع',
+'ecommerce' => 'تجارة الكترونية',
+'online courses' => 'دورات عن بعد',
+'bidding' => 'مزايدة',
+'call center' => 'مركز المكالمات',
+'logistics' => 'الخدمات اللوجستية',
+'website analytics' => 'تحليل الموقع ',
+'finance performance' => 'أداء المالية',
+'store analytics'=> 'تحليل المتجر',
+'social' => 'اجتماعي',
+'delivery' => 'توصيل',
+'crypto' => 'التشفير',
+'schoole' => 'مدرسة',
+'bodcast' => 'بودكاست',
+'explore' => 'اكسبلور',
+]
+?>

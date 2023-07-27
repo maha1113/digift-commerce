@@ -11,6 +11,72 @@ Dribbble: www.dribbble.com/keenthemes
 Like: www.facebook.com/keenthemes
 License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
 -->
+<html lang="{{App::currentLocale()}}" direction="{{ LaravelLocalization::getCurrentLocaleDirection() }}" dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}" style="direction: {{ LaravelLocalization::getCurrentLocaleDirection()  }}">
+<!--begin::Head-->
+<head>
+    <base href="" />
+    <title> {{config('app.name')}} | @yield('title')</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
+    <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
+    <meta property="og:url" content="https://keenthemes.com/metronic" />
+    <meta property="og:site_name" content="Keenthemes | Metronic" />
+    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+    <link rel="shortcut icon" href="{{asset('dashboard/assets/media/logos/logo.png')}}" />
+
+
+    @if( LaravelLocalization::getCurrentLocaleDirection() == 'rtl' )
+
+    <!--begin::Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    {{--
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> --}}
+    <!--end::Fonts-->
+
+    <!--begin::Page Vendor Stylesheets(used by this page)-->
+    <link href="{{asset('dashboard/assets/plugins/custom/prismjs/prismjs.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+    <!--end::Page Vendor Stylesheets-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="{{asset('dashboard/assets/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('dashboard/assets/css/style.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+
+    @else
+
+
+    <!--begin::Fonts(mandatory for all pages)-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Vendor Stylesheets(used for this page only)-->
+    {{-- <link href="{{asset('dashboard/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" /> --}}
+    {{-- <link href="{{asset('dashboard/assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" /> --}}
+    <!--end::Vendor Stylesheets-->
+    <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+    <link href="{{asset('dashboard/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('dashboard/assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+    @endif
+
+    <!--end::Global Stylesheets Bundle-->
+    @yield('styles')
+
+{{-- <!DOCTYPE html>
+<!--
+Author: Keenthemes
+Product Name: Metronic
+Product Version: 8.1.7
+Purchase: https://1.envato.market/EA4JP
+Website: http://www.keenthemes.com
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
+-->
 <html lang="en">
 <!--begin::Head-->
 
@@ -42,7 +108,7 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="{{ asset('dashboard/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('dashboard/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('dashboard/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" /> --}}
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -128,7 +194,7 @@ License: For each use you must have a valid license purchased only from above li
                                     class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
-                                        <span class="menu-title">Dashboards</span>
+                                        <span class="menu-title">{{ __('ar/app.dashboard') }}</span>
                                         <span class="menu-arrow d-lg-none"></span>
                                     </span>
                                     <!--end:Menu link-->
@@ -181,7 +247,7 @@ License: For each use you must have a valid license purchased only from above li
                                                                     </span>
                                                                     <span class="d-flex flex-column">
                                                                         <span
-                                                                            class="fs-6 fw-bold text-gray-800">Default</span>
+                                                                            class="fs-6 fw-bold text-gray-800">{{ __('app.default') }}</span>
                                                                         <span
                                                                             class="fs-7 fw-semibold text-muted">Reports
                                                                             & statistics</span>
@@ -590,7 +656,7 @@ License: For each use you must have a valid license purchased only from above li
                                     class="menu-item menu-lg-down-accordion me-0 me-lg-2">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
-                                        <span class="menu-title">Pages</span>
+                                        <span class="menu-title">{{ __('ar/app.pages') }}</span>
                                         <span class="menu-arrow d-lg-none"></span>
                                     </span>
                                     <!--end:Menu link-->
@@ -3442,7 +3508,7 @@ License: For each use you must have a valid license purchased only from above li
                                     class="menu-item menu-lg-down-accordion me-0 me-lg-2">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
-                                        <span class="menu-title">Layouts</span>
+                                        <span class="menu-title">{{__('ar/app.layouts')}}</span>
                                         <span class="menu-arrow d-lg-none"></span>
                                     </span>
                                     <!--end:Menu link-->
@@ -3640,11 +3706,20 @@ License: For each use you must have a valid license purchased only from above li
                                     class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
-                                        <span class="menu-title">Help</span>
+                                        <span class="menu-title">{{ __('ar/app.help') }}</span>
                                         <span class="menu-arrow d-lg-none"></span>
                                     </span>
                                     <!--end:Menu link-->
                                     <!--begin:Menu sub-->
+                                    {{-- <ul>
+                                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                            <li>
+                                                <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                    {{ $properties['native'] }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul> --}}
                                     <div
                                         class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-200px">
                                         <!--begin:Menu item-->
@@ -6097,70 +6172,47 @@ License: For each use you must have a valid license purchased only from above li
                                         <a href="#" class="menu-link px-5">
                                             <span class="menu-title position-relative">Language
                                                 <span
-                                                    class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
+                                                    class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">
+
+                                                    @if (LaravelLocalization::getCurrentLocale() == 'ar')
+                                                        Arabic
+                                                        @else
+                                                        English
+
+                                                    @endif
+
+
                                                     <img class="w-15px h-15px rounded-1 ms-2"
                                                         src="{{ asset('dashboard/assets/media/flags/united-states.svg') }}"
                                                         alt="" /></span></span>
                                         </a>
+
+
                                         <!--begin::Menu sub-->
                                         <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-3">
-                                                <a href="../../demo1/dist/account/settings.html"
-                                                    class="menu-link d-flex px-5 active">
+                                                <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                                                    class="menu-link d-flex px-5
+
+                                                   @if(LaravelLocalization::getCurrentLocale() == $localeCode )
+                                                    active
+                                                    @endif
+
+                                                    ">
                                                     <span class="symbol symbol-20px me-4">
                                                         <img class="rounded-1"
                                                             src="{{ asset('dashboard/assets/media/flags/united-states.svg') }}"
                                                             alt="" />
-                                                    </span>English</a>
+                                                    </span> {{ $properties['native'] }}</a>
                                             </div>
                                             <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo1/dist/account/settings.html"
-                                                    class="menu-link d-flex px-5">
-                                                    <span class="symbol symbol-20px me-4">
-                                                        <img class="rounded-1"
-                                                            src="{{ asset('dashboard/assets/media/flags/spain.svg') }}"
-                                                            alt="" />
-                                                    </span>Spanish</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo1/dist/account/settings.html"
-                                                    class="menu-link d-flex px-5">
-                                                    <span class="symbol symbol-20px me-4">
-                                                        <img class="rounded-1"
-                                                            src="{{ asset('dashboard/assets/media/flags/germany.svg') }}"
-                                                            alt="" />
-                                                    </span>German</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo1/dist/account/settings.html"
-                                                    class="menu-link d-flex px-5">
-                                                    <span class="symbol symbol-20px me-4">
-                                                        <img class="rounded-1"
-                                                            src="{{ asset('dashboard/assets/media/flags/japan.svg') }}"
-                                                            alt="" />
-                                                    </span>Japanese</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo1/dist/account/settings.html"
-                                                    class="menu-link d-flex px-5">
-                                                    <span class="symbol symbol-20px me-4">
-                                                        <img class="rounded-1"
-                                                            src="{{ asset('dashboard/assets/media/flags/france.svg') }}"
-                                                            alt="" />
-                                                    </span>French</a>
-                                            </div>
-                                            <!--end::Menu item-->
+
+                                            @endforeach
                                         </div>
                                         <!--end::Menu sub-->
+
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
@@ -6211,6 +6263,7 @@ License: For each use you must have a valid license purchased only from above li
             <!--begin::Wrapper-->
             <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
                 <!--begin::Sidebar-->
+                @yield('content')
                 <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true"
                     data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}"
                     data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start"
@@ -6589,7 +6642,7 @@ License: For each use you must have a valid license purchased only from above li
                                             </span>
                                             <!--end::Svg Icon-->
                                         </span>
-                                        <span class="menu-title">User Profile</span>
+                                        <span class="menu-title">{{__('ar/app.user profile')}}</span>
                                         <span class="menu-arrow"></span>
                                     </span>
                                     <!--end:Menu link-->
@@ -6706,7 +6759,7 @@ License: For each use you must have a valid license purchased only from above li
                                             </span>
                                             <!--end::Svg Icon-->
                                         </span>
-                                        <span class="menu-title">Product</span>
+                                        <span class="menu-title">{{__('ar/app.product')}}</span>
                                         <span class="menu-arrow"></span>
                                     </span>
                                     <!--end:Menu link-->
@@ -6719,7 +6772,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">create product</span>
+                                                <span class="menu-title">{{__('ar/app.create product')}}</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
@@ -6731,7 +6784,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">all product</span>
+                                                <span class="menu-title">{{__('ar/app.all products')}}</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
@@ -6742,6 +6795,48 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--end:Menu link-->
                                     </div>
                                     <!--end:Menu item-->
+
+                                    <div data-kt-menu-trigger="click" class="menu-item here menu-accordion mb-1 hover show">
+                                        <!--begin:Menu link-->
+                                        <span class="menu-link">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Users</span>
+                                            <span class="menu-arrow"></span>
+                                        </span>
+                                        <!--end:Menu link-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion show" kt-hidden-height="81" style="">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link active" href="{{ route('admin.users.index') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Users List</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" href="{{ route('admin.users.create')}}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Create User</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                    </div>
+                                <!--end:Menu link-->
+                            </div>
 
                                 </div>
 
@@ -6794,27 +6889,7 @@ License: For each use you must have a valid license purchased only from above li
                                     <!--begin::Page title-->
                                     <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                                         <!--begin::Title-->
-                                        <h1
-                                            class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                                            Multipurpose</h1>
-                                        <!--end::Title-->
-                                        <!--begin::Breadcrumb-->
-                                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
-                                            <!--begin::Item-->
-                                            <li class="breadcrumb-item text-muted">
-                                                <a href="../../demo1/dist/index.html"
-                                                    class="text-muted text-hover-primary">Home</a>
-                                            </li>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <li class="breadcrumb-item">
-                                                <span class="bullet bg-gray-400 w-5px h-2px"></span>
-                                            </li>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <li class="breadcrumb-item text-muted">Dashboards</li>
-                                            <!--end::Item-->
-                                        </ul>
+
                                         <!--end::Breadcrumb-->
                                     </div>
                                     <!--end::Page title-->
