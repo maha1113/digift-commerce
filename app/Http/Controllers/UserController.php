@@ -12,6 +12,10 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::all();
+        return view('dashboard.usesrs.index',[
+            "users" => $users
+        ]);
 
     }
 
@@ -20,6 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
+
         return view('dashboard.usesrs.create');
     }
 
