@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('dashboard.usesrs.index',[
+        return view('dashboard.users.index',[
             "users" => $users
         ]);
 
@@ -25,7 +25,7 @@ class UserController extends Controller
     public function create()
     {
 
-        return view('dashboard.usesrs.create');
+        return view('dashboard.users.create');
     }
 
     /**
@@ -33,7 +33,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->validate([
+            'username' => ['required','string','max:255'],
+            'email' => ['required', 'string'],
+            'password' => ['required','integer'],
+            'type' => ['required']
+           ]);
+
+        $user = new User();
+        $user->name = $request->username;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->type = $request->type;
+         $user->save();
+        $flashMessage = 'created successfully';
+        return redirect()->back()->with('flashMessage' , $flashMessage);
     }
 
     /**
@@ -41,15 +55,18 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('dashboard.users.index',[
+          'user' => $user
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+        $user = User::findorFail($id);
+        return view('dashboard.users.edit',compact('user'));
     }
 
     /**
@@ -57,14 +74,30 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+
+        $validator = $request->validate([
+            'username' => ['required','string','max:255'],
+            'email' => ['required', 'string'],
+            'password' => ['required','integer'],
+            'type' => ['required']
+           ]);
+
+        $user->name = $request->username;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->type = $request->type;
+         $user->save();
+        $flashMessage = 'created successfully';
+        return redirect()->back()->with('flashMessage' , $flashMessage);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $deleted = User::destroy($id);
+        $flashMessage = 'deleted successfully';
+        return redirect()->back()->with('flashMessage' , $flashMessage);
     }
 }

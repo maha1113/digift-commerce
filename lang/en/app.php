@@ -28,6 +28,38 @@ return[
 'schoole' => 'Schoole',
 'podcast' => 'Podcast',
 'explore' => 'explore',
+'product' => ' Product',
+'desc' => 'Desc',
+'quantity' => 'Quantity',
+'price'=> 'Price ',
+'image' => 'Image',
+'choose image' => ' Choose Image',
+'upload' => 'Upload',
+'create product' => ' Create Product',
+'action' => 'Action',
+'name' => 'Name',
+'email' => ' Email',
+'role' => 'Role',
+'password' => 'Password',
+'store' => 'Store',
+'create store' => 'Create Store',
+'users' => 'Users',
+'create user' => 'Create User',
+'all stores' => 'All Stores',
+'user list' => 'User list',
+'products list' => 'Products List',
+'type' => 'Type',
+'status' => 'Status',
+'orders list' => ' Orders List',
+'create orders' => 'Create Orders',
+'order' => 'Order',
+'wallet' => 'Wallet',
+'walletful' => 'WalletFul',
+'order' => 'Order',
+'all orders' => 'All Orders ',
+'create order' => ' Create Order'
+
+
 
 ];
 

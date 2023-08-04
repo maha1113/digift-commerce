@@ -1,11 +1,11 @@
 @extends('dashboard.index')
-
 @section('content')
 
 
 @if (session('flashMessage'))
     <div class="alert alert-success">{{ session('flashMessage') }}</div>
 @endif
+
 <div class="card card-primary">
     <div class="card-header">
       <h3 class="card-title">{{ __('ar/app.product') }}</h3>
@@ -16,8 +16,8 @@
         @csrf
       <div class="card-body">
         <div class="form-group">
-          <label for="exampleInputtitle">{{ __('ar/app.name') }}</label>
-          <input type="text" class="form-control" name="name"  id="exampleInputtitle" placeholder="name" value="{{ old('name') }}">
+          <label for="exampleInputtitle">{{ __('ar/app.name_product') }}</label>
+          <input type="text" class="form-control" name="name_product"  id="exampleInputtitle" placeholder="name_product" value="{{ $product->name_product }}">
         </div>
         @error('name_product')
 
@@ -30,27 +30,32 @@
             <div class="form-group">
                 <div class="form-group">
                   <label for="exampleInputtitle">{{ __('ar/app.desc') }}</label>
-                  <input type="text" class="form-control" name="desc"  id="exampleInputtitle" placeholder="desc" value="{{ old('desc') }}">
+                  <input type="text" class="form-control" name="desc"  id="exampleInputtitle" placeholder="desc" value="{{ $product->desc }}">
                 </div>
                 @error('desc')
 
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
 
+                <div class="form-group">
+                    <div class="form-group">
+                      <label for="exampleInputtitle">{{ __('ar/app.quantity') }}</label>
+                      <input type="text" class="form-control" name="quantity"  id="exampleInputtitle" placeholder="quantity" value="{{ $product->quantity }}">
+                    </div>
+                    @error('quantity')
 
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
 
                     <div class="form-group">
                         <div class="form-group">
                           <label for="exampleInputtitle">{{ __('ar/app.price') }}</label>
-                          <input type="text" class="form-control" name="price"  id="exampleInputtitle" placeholder="price" value="{{ old('price') }}">
+                          <input type="text" class="form-control" name="price"  id="exampleInputtitle" placeholder="price" value="{{ $product->price }}">
                         </div>
                         @error('sale_price')
 
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
-
-
-
 
 
         <div class="form-group">
@@ -80,6 +85,17 @@
       </div>
     </form>
   </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

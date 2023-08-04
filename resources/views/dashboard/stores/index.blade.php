@@ -7,13 +7,13 @@
 <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">{{ __('ar/app.product') }}</h3>
+        <h3 class="card-title">{{ __('ar/app.store') }}</h3>
 
 
         <div class="card-tools">
           <div class="input-group input-group-sm" style="width: 150px;">
 
-            <a href="{{ route('admin.products.create') }}" class="btn btn-info" role="button">{{ __('ar/app.create product') }}</a>
+            <a href="{{ route('admin.stores.create') }}" class="btn btn-info" role="button">{{ __('ar/app.create store') }}</a>
             <div class="input-group-append">
 
             </div>
@@ -32,30 +32,24 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>{{ __('ar/app.image') }}</th>
+              {{-- <th>{{ __('ar/app.image') }}</th> --}}
               <th>{{ __('ar/app.name') }}</th>
-              <th>{{ __('ar/app.desc') }}</th>
-              <th>{{ __('ar/app.quantity') }}</th>
-              <th>{{ __('ar/app.price') }}</th>
               <th>{{ __('ar/app.status') }}</th>
               <th>{{ __('ar/app.action') }}</th>
 
             </tr>
           </thead>
           <tbody>
-            @foreach ($products as $product)
+            @foreach ($stores as $store)
             <tr>
 
-                <td>{{ $product->id }}</td>
-
-              <td><img width="100px" src= "{{ asset( 'storage/'. $product->image ) }}"  alt="image"></td>
-              <td>{{ $product->name }}</td>
-              <td>{{ $product->desc }}</td>
-              <td>{{ $product->quantity}}</td>
-              <td>{{ $product->price}}</td>
-              <td>{{ $product->status ? 'فعالة' : 'غير فعال'}}</td>
-              <td style="display: flex; justify-content:space-evenly"><a href="{{ route('admin.products.edit', $product->id) }} " class=" btn btn-primary btn-sm"><i class="fas fa-edit "></a></i>
-                <form action="{{ route('admin.products.destroy', $product->id) }}" method="post">
+                <td>{{ $store->id }}</td>
+{{--
+              <td><img width="100px" src= "{{ asset( 'storage/'. $store->image ) }}"  alt="image"></td> --}}
+              <td>{{ $store->name }}</td>
+              <td>{{ $store->status ? 'فعالة' : 'غير فعال' }}</td>
+              <td style="display: flex; justify-content:space-evenly"><a href="{{ route('admin.stores.edit', $store->id) }} " class=" btn btn-primary btn-sm"><i class="fas fa-edit "></a></i>
+                <form action="{{ route('admin.stores.destroy', $store->id) }}" method="post">
                         @csrf
                         @method('delete')
                         <button   class=" btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
@@ -73,19 +67,6 @@
     </div>
     <!-- /.card -->
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

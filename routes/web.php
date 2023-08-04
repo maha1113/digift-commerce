@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Site3Controller;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WalletController;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Route;
 Use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -35,4 +39,7 @@ Route::prefix(LaravelLocalization::setLocale() .'/admin')->name('admin.')->group
 Route::get('/',[AdminController::class,'index'])->name('index');
 Route::resource('products', ProductController::class);
 Route::resource('users',UserController::class);
+Route::resource('stores',StoreController::class);
+Route::resource('orders',OrderController::class);
+Route::resource('wallet',WalletController::class);
 });
